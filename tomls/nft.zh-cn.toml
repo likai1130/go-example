@@ -1,0 +1,13 @@
+StatusAccepted		 = "访问到达，无响应数据"
+
+InvalidParams        = "无效的参数"
+IllegalRequest       = "非法请求"
+StatusUnauthorized	 = "认证失败"
+StatusForbidden		 = "拒绝访问"
+StatusNotFound		 = "资源不存在"
+StatusConflict		 = "资源已存在"
+
+InternalError        = "内部错误"
+StatusBadGateway	 = "网关异常"
+StatusServiceUnavailable = "服务异常"
+StatusGatewayTimeout = "连接超时"

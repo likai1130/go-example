@@ -1,0 +1,13 @@
+StatusAccepted		 = "Accepted"
+
+InvalidParams        = "Bad Request"
+IllegalRequest       = "Illegal request, unable to query unlinked data."
+StatusUnauthorized	 = "Non-Authoritative Information"
+StatusForbidden		 = "Forbidden"
+StatusNotFound		 = "Method Not Allowed"
+StatusConflict		 = "Conflict"
+
+InternalError        = "Internal Server Error"
+StatusBadGateway	 = "Bad Gateway"
+StatusServiceUnavailable = "Service Unavailable"
+StatusGatewayTimeout = "Gateway Timeout"

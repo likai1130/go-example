@@ -13,3 +13,17 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+.idea/
+*.iml
+*/*.iml
+*.ipr
+*/*.ipr
+*.iws
+*/*.iws
+*/*.log
+*/*.iml
+/logs
+*/logs/
+go.sum
+data
+go-example

@@ -1,0 +1,5 @@
+
+CGO_ENABLED=0 GOARCH=amd64  GOOS=linux go build -a -v -installsuffix cgo -o go-example .
+
+#docker build --no-cache -t {镜像仓库}/{项目}/go-example:v0.0.1 .
+#docker push {镜像仓库}/{项目}/go-example:v0.0.1
