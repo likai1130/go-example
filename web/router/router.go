@@ -36,5 +36,4 @@ func Configure(r *bootstrap.Bootstrapper) {
 */
 func concreteRouter(rootRouter *gin.RouterGroup) {
 
-
 }

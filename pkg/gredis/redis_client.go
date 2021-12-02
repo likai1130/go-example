@@ -89,5 +89,4 @@ func SetUp() {
 	if _, err := NewRedisClient(); err != nil {
 		panic(err)
 	}
-
 }

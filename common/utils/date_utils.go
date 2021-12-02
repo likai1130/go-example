@@ -14,8 +14,8 @@ func GetCurrentDate() (dateLen8 string) {
 }
 
 /**
-	字符类型时间戳
- */
+字符类型时间戳
+*/
 func GetCurrentTimeUnix() string {
 	//当前时间戳
 	t1 := time.Now().Unix()

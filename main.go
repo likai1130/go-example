@@ -1,21 +1,23 @@
 package main
 
 import (
-
 	"fmt"
 	"go-example/bootstrap"
 	"go-example/config"
-	"go-example/middlewares"
+	"go-example/middlewares/logging"
 	"go-example/pkg/gredis"
+	mongodb "go-example/pkg/mongdb"
 	"go-example/web/router"
 )
 
 func init() {
+	config.InitConfig()
 	gredis.SetUp()
+	mongodb.SetUp()
 }
 
 func newApp() *bootstrap.Bootstrapper {
-	middlewares.SystemLogsSetUp()
+	logging.SystemLogsSetUp()
 	app := bootstrap.New("gin-web", "gin-web-example")
 	app.Bootstrap()
 	app.Configure(router.Configure)

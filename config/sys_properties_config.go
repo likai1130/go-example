@@ -1,16 +1,16 @@
 package config
 
 import (
-	"fmt"
 	"github.com/flyleft/gprofile"
+	"log"
 )
 
 var AppConfig = ApplicationConfig{}
 
-func init() {
+func InitConfig() {
 	config, err := gprofile.Profile(&ApplicationConfig{}, "./application.yaml", true)
 	if err != nil {
-		fmt.Errorf("Profile execute error", err)
+		log.Fatalf("Profile execute error: %s", err.Error())
 	}
 	AppConfig = *config.(*ApplicationConfig)
 

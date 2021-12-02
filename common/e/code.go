@@ -18,5 +18,4 @@ const (
 	StatusBadGateway         = "StatusBadGateway"
 	StatusServiceUnavailable = "StatusServiceUnavailable"
 	StatusGatewayTimeout     = "StatusGatewayTimeout"
-
 )

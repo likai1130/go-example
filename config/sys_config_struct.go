@@ -30,8 +30,19 @@ type Logger struct {
 	RotationTime int64  `profile:"rotationTime" profileDefault:"1" json:"rotationTime"`
 }
 
+/**
+MongoDB 配置
+*/
+type MongoConf struct {
+	Hosts       []string `profile:"hosts" profileDefault:"[127.0.0.1:27017]"`
+	UserName    string   `profile:"userName"`
+	Password    string   `profile:"password"`
+	MaxPoolSize uint64      `profile:"maxPoolSize" profileDefault:"100" `
+}
+
 type ApplicationConfig struct {
 	Server      WebServer   `profile:"server"`
 	RedisConfig RedisConfig `profile:"redis"`
 	Logger      Logger      `profile:"logger"`
+	MongoConf MongoConf `profile:"mongodb"`
 }

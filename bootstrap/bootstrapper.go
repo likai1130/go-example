@@ -2,7 +2,9 @@ package bootstrap
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-example/middlewares"
+	"go-example/middlewares/crossdomain"
+	"go-example/middlewares/logging"
+	"go-example/middlewares/metrics"
 	"time"
 )
 
@@ -39,14 +41,14 @@ func (b *Bootstrapper) Configure(cs ...Configurator) {
 func (b *Bootstrapper) Bootstrap() *Bootstrapper {
 
 	//设置业务日志级别或者中间件
-	b.Use(middlewares.LoggerToFile(b.AppName))
+	b.Use(logging.LoggerToFile(b.AppName))
 
 	//设置监控
-	if p := middlewares.PrometheusSetUp(); p != nil {
+	if p := metrics.PrometheusSetUp(); p != nil {
 		p.Use(b.Engine)
 	}
 	b.Use(gin.Recovery())
-	b.Use(middlewares.Cors())
+	b.Use(crossdomain.Cors())
 	//b.Use(middlewares.Authentication())
 
 	return b

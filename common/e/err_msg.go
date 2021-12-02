@@ -20,4 +20,3 @@ var MsgFlags = map[string](int){
 	StatusGatewayTimeout:     http.StatusGatewayTimeout,      //超时		504
 
 }
-
