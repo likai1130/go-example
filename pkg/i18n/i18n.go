@@ -4,6 +4,10 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/nicksnyder/go-i18n/v2/i18n"
 	"golang.org/x/text/language"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"strings"
 )
 
 // 本地化包
@@ -14,9 +18,14 @@ func init() {
 	bundle = i18n.NewBundle(language.English)
 	bundle.RegisterUnmarshalFunc("toml", toml.Unmarshal)
 
+	file, _ := exec.LookPath(os.Args[0])
+	path, _ := filepath.Abs(file)
+	index := strings.LastIndex(path, string(os.PathSeparator))
+	path = path[:index]
+
 	// 加载公共信息语言包文件
-	bundle.MustLoadMessageFile("./tomls/nft.en.toml")
-	bundle.MustLoadMessageFile("./tomls/nft.zh-cn.toml")
+	bundle.MustLoadMessageFile(path + "/tomls/nft.en.toml")
+	bundle.MustLoadMessageFile(path + "/tomls/nft.zh-cn.toml")
 }
 
 /* 本地化语言

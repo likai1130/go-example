@@ -45,7 +45,7 @@ func setUp() (mongoCli *mongo.Client, err error) {
 		return nil, fmt.Errorf("MongoDB ping fail：%s", err.Error())
 	}
 
-	logger.NewInstance().GetLogger().Info("MongoDB connect success !")
+	logger.GetLogger().Info("MongoDB connect success !")
 	return mongoCli, nil
 }
 

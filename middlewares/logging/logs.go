@@ -43,7 +43,7 @@ func LoggerToFile(appName string) gin.HandlerFunc {
 系统启动日志
 */
 func SystemLogsSetUp() {
-	logger.NewInstance().GetLogger().SetTimeFormat("2006-01-02 15:04:05")
+	logger.GetLogger().SetTimeFormat("2006-01-02 15:04:05")
 	//系统日志设置
 	if config.AppConfig.Logger.IsOutPutFile {
 		path := logger.CreateGinSysLogPath("access")

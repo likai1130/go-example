@@ -52,7 +52,7 @@ func newSingleRedis(c config.RedisConfig) (redis.Cmdable, error) {
 	if err := redisClient.Ping().Err(); err != nil {
 		return nil, errors.New(fmt.Sprintf("redis connection failed: %s", err.Error()))
 	}
-	logger.NewInstance().GetLogger().Info("single redis client init success! ")
+	logger.GetLogger().Info("single redis client init success! ")
 	return redisClient, nil
 }
 
@@ -66,7 +66,7 @@ func newClusterRedis(c config.RedisConfig) (redis.Cmdable, error) {
 	if err := redisClient.Ping().Err(); err != nil {
 		return nil, errors.New(fmt.Sprintf("redis connection failed: %s", err.Error()))
 	}
-	logger.NewInstance().GetLogger().Info("cluster redis client init success! ")
+	logger.GetLogger().Info("cluster redis client init success! ")
 	return redisClient, nil
 }
 
@@ -81,7 +81,7 @@ func newSentinelRedis(c config.RedisConfig) (redis.Cmdable, error) {
 	if err := redisClient.Ping().Err(); err != nil {
 		return nil, errors.New(fmt.Sprintf("redis connection failed: %s", err.Error()))
 	}
-	logger.NewInstance().GetLogger().Info("sentinel redis client init success! ")
+	logger.GetLogger().Info("sentinel redis client init success! ")
 	return redisClient, nil
 }
 
